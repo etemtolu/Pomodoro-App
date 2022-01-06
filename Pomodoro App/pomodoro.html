@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro</title>
+    <link rel="stylesheet" href="css/dizayn.css">
+    <style>
+        body {
+            text-align: center;
+            background-color: rgb(14, 14, 80);
+        }
+    </style>
+</head>
+
+<body>
+    <h2 style="color:white">pomodoro</h2>
+    <div class="yerim">
+        <button type="text" class="pomo butonlar" action="gerisayim">pomodoro</button>
+        <button type="text" class="sb butonlar" action="">short break</button>
+        <button type="text" class="lb butonlar" action="">long break</button>
+    </div>
+    <div class="s">
+        <div class="s1">
+            <button class="start" action="">
+                <div class="sure">
+                    25:00</div>
+                S T A R T
+            </button>
+        </div>
+        <div class="a">
+            <button class="sbutton" action="">
+
+                <i class="large material-icons" style="color: grey;font-size:40px">settings</i>
+            </button>
+        </div>
+        <script type="text/javascript">
+            var saniye = 0, dakika = 0, saat = 0;
+            function bak()
+            {
+              if(saniye < 59) saniye = saniye + 1;
+              else
+              {
+                saniye = 0; 
+                if(dakika < 59) dakika = dakika + 1;
+                else{dakika = 0; saat = saat + 1;}
+              }
+              $("#sure").html(saat + " : " + dakika + " : " + saniye);
+            }
+            $(document).ready(function(){
+              $("#sure").html("0 : 0 : 0");
+              setInterval(bak, 1000);
+            });
+          </script>
+</body>
+
+</html>
